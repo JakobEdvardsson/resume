@@ -8,6 +8,7 @@ export default function AchievementItem({
   achievement,
   body,
   organization,
+  completionYear,
 }: Achievement): ReactNode {
   return (
     <article className="space-y-4">
@@ -19,6 +20,9 @@ export default function AchievementItem({
         <div className="text-neutral-11 flex items-center gap-2 text-lg font-semibold tracking-wide">
           <AcademicCapIcon className="h-4" />
           {organization}
+        </div>
+        <div className="text-neutral-11 text-sm leading-none tracking-wide">
+          {completionYear}
         </div>
       </div>
 
