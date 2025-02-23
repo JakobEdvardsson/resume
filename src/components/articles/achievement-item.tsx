@@ -8,7 +8,7 @@ export default function AchievementItem({
   achievement,
   body,
   organization,
-  completionYear,
+  date,
 }: Achievement): ReactNode {
   return (
     <article className="space-y-4">
@@ -22,7 +22,7 @@ export default function AchievementItem({
           {organization}
         </div>
         <div className="text-neutral-11 text-sm leading-none tracking-wide">
-          {completionYear}
+          {date}
         </div>
       </div>
 
