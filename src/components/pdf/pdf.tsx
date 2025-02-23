@@ -369,6 +369,15 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
               </View>
             ))}
           </View>
+
+          <View
+            style={{
+              borderBottomWidth: 1,
+              borderBottomColor: '#999',
+              marginVertical: 8,
+            }}
+          />
+
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
               <CircleGraduationCap size={fontSizes.m} />
@@ -389,6 +398,15 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
               </View>
             ))}
           </View>
+
+          <View
+            style={{
+              borderBottomWidth: 1,
+              borderBottomColor: '#999',
+              marginVertical: 8,
+            }}
+          />
+
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
               <CirclePaintbrush size={fontSizes.m} />
