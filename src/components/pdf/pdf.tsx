@@ -281,7 +281,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
   return (
     <Document
       author={fullName}
-      title={`Resumé for ${fullName}, ${year.toString()}`}
+      title={`Resume for ${fullName}, ${year.toString()}`}
     >
       <Page size="LETTER" style={styles.page}>
         <View style={styles.sidebar}>

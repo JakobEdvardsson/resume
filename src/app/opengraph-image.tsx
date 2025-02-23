@@ -8,7 +8,7 @@ import { fullName } from 'src/helpers/utils';
 
 const theme = resumeConfig.imageTheme;
 
-export const alt = 'Professional Résumé';
+export const alt = 'Professional Resume';
 export const contentType = 'image/png';
 export const runtime = 'nodejs';
 export const size = {
