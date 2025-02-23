@@ -13,6 +13,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Link,
 } from '@react-pdf/renderer';
 import path from 'node:path';
 import { HtmlProps } from 'node_modules/react-pdf-html/dist/types/Html';
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     gap: spacers[4],
   },
-  headerTitle: { fontSize: fontSizes.xl, fontWeight: 700 },
+  headerTitle: { fontSize: fontSizes.l, fontWeight: 700 },
   headerSubtitle: { fontSize: fontSizes.m, fontWeight: 700 },
   main: {
     alignSelf: 'stretch',
@@ -303,6 +304,25 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
                 <Text>Contact Information</Text>
               </View>
               <View style={styles.flexRow}>
+                <Text style={styles.bold}>Name:</Text>
+                <Text>
+                  &nbsp;{personal.givenName} {personal.familyName}
+                </Text>
+              </View>
+              <View style={styles.flexRow}>
+                <Text style={styles.bold}>Email:</Text>
+                <Text>&nbsp;{personal.email}</Text>
+              </View>
+              <View style={styles.flexRow}>
+                <Text style={styles.bold}>Website: </Text>
+                <Link
+                  src={`https://${personal.domain}`}
+                  style={{ textDecoration: 'none', color: 'black' }}
+                >
+                  {personal.domain}
+                </Link>
+              </View>
+              <View style={styles.flexRow}>
                 <Text style={styles.bold}>Location:</Text>
                 <Text>&nbsp;{personal.location}</Text>
               </View>
@@ -318,16 +338,9 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
                 <CircleCheck size={fontSizes.m} />
                 <Text>Skills &amp; Expertise</Text>
               </View>
-              {allSkills.map((skill, skillIndex) => (
+              {allSkills.map((skill) => (
                 <View key={skill._id}>
                   <View style={styles.itemHeading}>
-                    <View style={styles.sectionHeadingStars}>
-                      {Array.from({
-                        length: allSkills.length - skillIndex,
-                      }).map((star, starIndex) => (
-                        <Star key={starIndex} size={fontSizes.xxs} />
-                      ))}
-                    </View>
                     <Text style={styles.bold}>{skill.title}</Text>
                   </View>
                   <Html {...htmlProperties}>{skill.body.html}</Html>

@@ -15,7 +15,7 @@ export default function ContactInformation({
       <SectionHeading
         Icon={IdentificationIcon}
         level={3}
-        text="My Information"
+        text="Contact Information"
       />
 
       <ul>
@@ -24,10 +24,11 @@ export default function ContactInformation({
         </li>
         <li>
           <strong>Email:</strong>{' '}
-          <a href={`mailto:${personal.email as string}`}>{personal.email}</a>
+          <a href={`mailto:${personal.email}`}>{personal.email}</a>
         </li>
         <li>
-          <strong>Website:</strong> {personal.domain}
+          <strong>Website:</strong>{' '}
+          <a href={`https://${personal.domain}`}>{personal.domain}</a>
         </li>
         <li>
           <strong>Location:</strong> {personal.location}
