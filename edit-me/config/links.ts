@@ -1,30 +1,22 @@
-import {
-  SiBluesky,
-  SiGithub,
-  SiInstagram,
-  SiNpm,
-} from '@icons-pack/react-simple-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 import { CMSLink } from 'edit-me/types/cms-link';
 
 export const links: CMSLink[] = [
   {
-    href: 'https://github.com',
-    icon: SiGithub,
+    href: 'https://github.com/jakobedvardsson',
+    icon: faGithub,
     title: 'GitHub',
   },
   {
-    href: 'https://www.npmjs.com',
-    icon: SiNpm,
-    title: 'NPM',
+    href: 'https://www.linkedin.com/in/jakob-edvardsson',
+    icon: faLinkedin,
+    title: 'LinkedIn',
   },
   {
-    href: 'https://bsky.app',
-    icon: SiBluesky,
-    title: 'Bluesky',
-  },
-  {
-    href: 'https://www.instagram.com',
-    icon: SiInstagram,
-    title: 'Instagram',
+    href: 'mailto:jakob@edvardsson.tech',
+    icon: faEnvelope,
+    title: 'Email',
   },
 ];

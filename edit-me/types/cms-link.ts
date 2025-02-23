@@ -1,7 +1,7 @@
-import { IconType } from '@icons-pack/react-simple-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export interface CMSLink {
   href: string;
-  icon: IconType;
+  icon: IconDefinition;
   title: string;
 }

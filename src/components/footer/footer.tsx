@@ -3,11 +3,18 @@ import { personal } from '@content';
 import { ReactNode } from 'react';
 import { Button } from 'src/components/button/button';
 import { fullName } from 'src/helpers/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer(): ReactNode {
   return (
     <footer className="border-neutral-6 bg-neutral-2 text-neutral-12 border-t py-12">
       <div className="container space-y-8 text-center">
+        <div>
+          <h3 className="text-neutral-12 font-sans text-2xl font-bold text-balance md:text-3xl">
+            Links
+          </h3>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-3">
           {links.map((link) => (
             <Button
@@ -20,7 +27,7 @@ export default function Footer(): ReactNode {
                 <span className="sr-only">
                   {personal.givenName} on {link.title}
                 </span>
-                <link.icon aria-hidden size={18} />
+                <FontAwesomeIcon icon={link.icon} aria-hidden />
               </a>
             </Button>
           ))}
@@ -29,20 +36,6 @@ export default function Footer(): ReactNode {
         <div className="space-y-1">
           <div>
             Copyright © {new Date().getFullYear()} {fullName}
-          </div>
-          <div className="text-sm">
-            This résumé was generated with{' '}
-            <a className="text-link" href="https://nextjs.org/">
-              Next.js
-            </a>
-            . Learn how to deploy your own résumé with the{' '}
-            <a
-              className="text-link"
-              href="https://github.com/colinhemphill/nextjs-resume"
-            >
-              nextjs-resume
-            </a>
-            !
           </div>
         </div>
       </div>
