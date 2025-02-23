@@ -1,8 +1,12 @@
 ---
-givenName: Stacy
-familyName: Fakename
-title: Editor
-location: Cortex City, Mentopolis
+givenName: Jakob
+familyName: Edvardsson
+title: Computer Science Student
+location: Malmö, Sweden
+email: jakob@edvardsson.tech
+domain: Edvardsson.tech
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices in iaculis nunc sed augue lacus viverra vitae congue. Neque viverra [justo nec ultrices](#). Urna nunc id cursus metus aliquam eleifend mi in nulla. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra.
+I'm a Computer Science student at Malmö University with a passion for software development.
+When I'm not coding, I’m cosplaying as a sysadmin in my homelab, experimenting with different technologies and setups.
+Currently working towards a Bachelor's in Computer Science with a focus on Computer Systems Development.

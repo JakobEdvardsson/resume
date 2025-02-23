@@ -30,6 +30,16 @@ export const Personal = defineDocumentType(() => ({
         'Your general location of residence, not your personal address',
       required: true,
     },
+    email: {
+      type: 'string',
+      description: 'Work email',
+      required: true,
+    },
+    domain: {
+      type: 'string',
+      description: 'Domain to personal website',
+      required: true,
+    },
   },
 }));
 

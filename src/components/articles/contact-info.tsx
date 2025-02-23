@@ -15,10 +15,20 @@ export default function ContactInformation({
       <SectionHeading
         Icon={IdentificationIcon}
         level={3}
-        text="Contact Information"
+        text="My Information"
       />
 
       <ul>
+        <li>
+          <strong>Name:</strong> {personal.givenName} {personal.familyName}
+        </li>
+        <li>
+          <strong>Email:</strong>{' '}
+          <a href={`mailto:${personal.email as string}`}>{personal.email}</a>
+        </li>
+        <li>
+          <strong>Website:</strong> {personal.domain}
+        </li>
         <li>
           <strong>Location:</strong> {personal.location}
         </li>
