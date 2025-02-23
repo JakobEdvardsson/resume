@@ -2,9 +2,9 @@
   "name": "nextjs-resume",
   "version": "7.1.0",
   "author": {
-    "name": "Colin Hemphill",
-    "email": "colin@colinhemphill.com",
-    "url": "https://colinhemphill.com"
+    "name": "Jakob Edvardsson",
+    "email": "jakob@edvardsson.tech",
+    "url": "https://edvardsson.tech"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
