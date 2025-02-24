@@ -50,3 +50,4 @@ tsconfig.tsbuildinfo
 
 # Contentlayer
 .contentlayer
+.open-next

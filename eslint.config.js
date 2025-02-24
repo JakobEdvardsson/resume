@@ -50,6 +50,8 @@ export default tseslint.config(
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
       'react/jsx-no-literals': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
       'react/no-unknown-property': ['error', { ignore: ['tw'] }],
     },
     settings: {
