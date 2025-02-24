@@ -1,6 +1,5 @@
 import { resumeConfig } from '@config/resume-config';
 import {
-  PrivateField,
   ProfessionalExperience,
   additionalInfo,
   allSkills,
@@ -15,7 +14,6 @@ import {
   View,
   Link,
 } from '@react-pdf/renderer';
-import path from 'node:path';
 import { HtmlProps } from 'node_modules/react-pdf-html/dist/types/Html';
 import { ReactNode } from 'react';
 import Html from 'react-pdf-html';
@@ -41,22 +39,22 @@ Font.register({
     {
       fontStyle: 'normal',
       fontWeight: 400,
-      src: path.join(process.cwd(), 'src/fonts/AlbertSans-Regular.ttf'),
+      src: '/fonts/AlbertSans-Regular.ttf',
     },
     {
       fontStyle: 'italic',
       fontWeight: 400,
-      src: path.join(process.cwd(), 'src/fonts/AlbertSans-Italic.ttf'),
+      src: '/fonts/AlbertSans-Italic.ttf',
     },
     {
       fontStyle: 'normal',
       fontWeight: 700,
-      src: path.join(process.cwd(), 'src/fonts/AlbertSans-Bold.ttf'),
+      src: '/fonts/AlbertSans-Bold.ttf',
     },
     {
       fontStyle: 'italic',
       fontWeight: 700,
-      src: path.join(process.cwd(), 'src/fonts/AlbertSans-BoldIatalic.ttf'),
+      src: '/fonts/AlbertSans-BoldIatalic.ttf',
     },
   ],
 });
@@ -67,7 +65,7 @@ Font.register({
     {
       fontStyle: 'normal',
       fontWeight: 500,
-      src: path.join(process.cwd(), 'src/fonts/JetBrainsMono-Medium.ttf'),
+      src: '/fonts/JetBrainsMono-Medium.ttf',
     },
   ],
 });
@@ -249,10 +247,6 @@ const htmlProperties: Omit<HtmlProps, 'children'> = {
   },
 };
 
-interface PDFProperties {
-  privateInformation?: PrivateField[];
-}
-
 interface ProfessionExperienceProperties {
   professionalExperience: ProfessionalExperience;
 }
@@ -275,7 +269,7 @@ function ProfessionalExperienceDetails({
   );
 }
 
-export default function PDF({ privateInformation }: PDFProperties): ReactNode {
+export default function PDF(): ReactNode {
   const year = new Date().getFullYear();
 
   return (
@@ -325,12 +319,6 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
                 <Text style={styles.bold}>Location:</Text>
                 <Text>&nbsp;{personal.location}</Text>
               </View>
-              {privateInformation?.map((privateField) => (
-                <View key={privateField._id}>
-                  <Text style={styles.bold}>{privateField.label}:&nbsp;</Text>
-                  <Html {...htmlProperties}>{privateField.body.html}</Html>
-                </View>
-              ))}
             </View>
             <View style={styles.section}>
               <View style={styles.sectionHeading}>

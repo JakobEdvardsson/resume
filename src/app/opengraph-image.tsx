@@ -18,10 +18,10 @@ export const size = {
 
 export default async function og(): Promise<ImageResponse> {
   const albertBold = await readFile(
-    path.join(process.cwd(), 'src/fonts/AlbertSans-Bold.ttf'),
+    path.join(process.cwd(), '/fonts/AlbertSans-Bold.ttf'),
   );
   const albertNormal = await readFile(
-    path.join(process.cwd(), 'src/fonts/AlbertSans-Regular.ttf'),
+    path.join(process.cwd(), '/fonts/AlbertSans-Regular.ttf'),
   );
 
   return new ImageResponse(
