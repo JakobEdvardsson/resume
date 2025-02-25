@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { personal } from '@content';
 import { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: PropsWithChildren): ReactNode {
           <div className="space-y-12">
             <Header />
             <main>{children}</main>
+            <SpeedInsights />
             <Footer />
           </div>
         </ThemeProvider>
