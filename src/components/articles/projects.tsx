@@ -1,24 +1,24 @@
-import { BriefcaseIcon } from '@heroicons/react/24/solid';
+import { CommandLineIcon } from '@heroicons/react/24/solid';
 import { Fragment, ReactNode } from 'react';
 import Separator from 'src/components/articles/separator';
 import SectionHeading from 'src/components/section-heading/section-heading';
-import { sortedProfessionalExperiences } from 'src/helpers/utils';
-import ProfessionalItem from './professional-item';
+import { sortedProjects } from 'src/helpers/utils';
+import ProjectItem from './project-item';
 
-export default function Professional(): ReactNode {
+export default function Projects(): ReactNode {
   return (
     <article className="border-neutral-6 bg-neutral-2 rounded-xl border py-8 shadow-md">
       <div className="container space-y-6">
         <SectionHeading
           className="justify-center"
-          Icon={BriefcaseIcon}
+          Icon={CommandLineIcon}
           level={2}
-          text="Work Experience"
+          text="Projects"
         />
 
-        {sortedProfessionalExperiences.map((professional) => (
-          <Fragment key={professional._id}>
-            <ProfessionalItem {...professional} />
+        {sortedProjects.map((project) => (
+          <Fragment key={project._id}>
+            <ProjectItem {...project} />
             <Separator />
           </Fragment>
         ))}

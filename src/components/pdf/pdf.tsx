@@ -22,6 +22,7 @@ import Html from 'react-pdf-html';
 import BuildingColumns from 'src/components/pdf/icons/building-columns';
 import CircleBriefcase from 'src/components/pdf/icons/circle-briefcase';
 import CircleCheck from 'src/components/pdf/icons/circle-check';
+import CircleCommandLine from 'src/components/pdf/icons/circle-command-line';
 import CircleGraduationCap from 'src/components/pdf/icons/circle-graduation-cap';
 import CircleIdCard from 'src/components/pdf/icons/circle-id-card';
 import CirclePaintbrush from 'src/components/pdf/icons/circle-paintbrush';
@@ -381,6 +382,35 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             <View style={styles.sectionHeading}>
               <CircleGraduationCap size={fontSizes.m} />
               <Text>Education</Text>
+            </View>
+            {sortedAchievements.map((achievement) => (
+              <View key={achievement._id}>
+                <View style={styles.itemHeading}>
+                  <Text style={styles.bold}>{achievement.achievement}</Text>
+                </View>
+                <View style={styles.itemSubheadingRow}>
+                  <BuildingColumns size={fontSizes.xxs} />
+                  <Text style={styles.itemSubheading}>
+                    {achievement.organization}
+                  </Text>
+                </View>
+                <Html {...htmlProperties}>{achievement.body.html}</Html>
+              </View>
+            ))}
+          </View>
+
+          <View
+            style={{
+              borderBottomWidth: 1,
+              borderBottomColor: '#999',
+              marginVertical: 8,
+            }}
+          />
+
+          <View style={styles.section}>
+            <View style={styles.sectionHeading}>
+              <CircleCommandLine size={fontSizes.m} />
+              <Text>Projects</Text>
             </View>
             {sortedAchievements.map((achievement) => (
               <View key={achievement._id}>

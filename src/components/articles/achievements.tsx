@@ -7,8 +7,8 @@ import { sortedAchievements } from 'src/helpers/utils';
 
 export default function Achievements(): ReactNode {
   return (
-    <article className="border-neutral-6 bg-neutral-2 rounded-xl border py-12 shadow-md">
-      <div className="container space-y-8">
+    <article className="border-neutral-6 bg-neutral-2 rounded-xl border py-8 shadow-md">
+      <div className="container space-y-6">
         <SectionHeading
           className="justify-center"
           Icon={AcademicCapIcon}

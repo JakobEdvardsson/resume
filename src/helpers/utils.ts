@@ -1,6 +1,7 @@
 import {
   allAchievements,
   allProfessionalExperiences,
+  allProjects,
   personal,
 } from '@content';
 import { ClassValue } from 'class-variance-authority/types';
@@ -24,6 +25,16 @@ export const sortedProfessionalExperiences = allProfessionalExperiences.sort(
 );
 
 export const sortedAchievements = allAchievements.sort((a, b) => {
+  const aOrderNumber = Number.parseInt(
+    a._raw.sourceFileName.replaceAll(/^\D+/g, ''),
+  );
+  const bOrderNumber = Number.parseInt(
+    b._raw.sourceFileName.replaceAll(/^\D+/g, ''),
+  );
+  return aOrderNumber - bOrderNumber;
+});
+
+export const sortedProjects = allProjects.sort((a, b) => {
   const aOrderNumber = Number.parseInt(
     a._raw.sourceFileName.replaceAll(/^\D+/g, ''),
   );

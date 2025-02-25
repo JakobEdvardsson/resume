@@ -4,6 +4,7 @@ import Achievements from 'src/components/articles/achievements';
 import AdditionalInfo from 'src/components/articles/additional-info';
 import ContactInformation from 'src/components/articles/contact-info';
 import Professional from 'src/components/articles/professional';
+import Projects from 'src/components/articles/projects';
 import Skills from 'src/components/articles/skills';
 
 export default function Page(): ReactNode {
@@ -16,6 +17,7 @@ export default function Page(): ReactNode {
       </div>
 
       <Professional />
+      <Projects />
       <Achievements />
       <AdditionalInfo />
     </div>
