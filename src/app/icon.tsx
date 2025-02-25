@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { ImageResponse } from 'next/og';
 import { getAccentColor } from 'src/helpers/colors';
 import { initials } from 'src/helpers/utils';

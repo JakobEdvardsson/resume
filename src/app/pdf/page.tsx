@@ -1,8 +1,17 @@
 'use client';
 
-import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
 import { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
+
 import PDF from 'src/components/pdf/pdf';
+
+const PDFViewer = dynamic(
+  () => import('@react-pdf/renderer').then((module) => module.PDFViewer),
+  {
+    ssr: false,
+    loading: () => <p>Loading document...</p>,
+  },
+);
 
 export default function Page(): ReactNode {
   return (
@@ -11,7 +20,7 @@ export default function Page(): ReactNode {
         <PDF />
       </PDFViewer>
 
-      <PDFDownloadLink document={<PDF />}>Download</PDFDownloadLink>
+      {/* <PDFDownloadLink document={<PDF />}>Download</PDFDownloadLink> */}
     </div>
   );
 }

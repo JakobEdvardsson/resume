@@ -5,3 +5,42 @@
 @import './base';
 @import './variants';
 @import './utilities';
+
+/* globals.css */
+@font-face {
+  font-family: 'Albert Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/AlbertSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Albert Sans';
+  font-weight: 700;
+  font-style: bold;
+  src: url('/fonts/AlbertSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-style: bold;
+  src: url('/fonts/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+/* Optional: Apply these fonts globally */
+body {
+  font-family: 'Albert Sans', sans-serif;
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono', monospace;
+}

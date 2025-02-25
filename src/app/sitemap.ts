@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { MetadataRoute } from 'next';
 import { deployURL } from 'src/helpers/environment';
 
