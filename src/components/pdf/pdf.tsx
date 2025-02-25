@@ -26,7 +26,6 @@ import CircleGraduationCap from 'src/components/pdf/icons/circle-graduation-cap'
 import CircleIdCard from 'src/components/pdf/icons/circle-id-card';
 import CirclePaintbrush from 'src/components/pdf/icons/circle-paintbrush';
 import CircleUser from 'src/components/pdf/icons/circle-user';
-import Star from 'src/components/pdf/icons/star';
 import { getAccentColor, getNeutralColor } from 'src/helpers/colors';
 import {
   fullName,
