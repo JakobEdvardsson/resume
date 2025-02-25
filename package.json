@@ -33,7 +33,6 @@
     "@eslint/js": "9.20.0",
     "@happy-dom/global-registrator": "17.1.0",
     "@next/eslint-plugin-next": "15.1.7",
-    "@opennextjs/cloudflare": "^0.5.3",
     "@tailwindcss/postcss": "4.0.6",
     "@testing-library/react": "16.2.0",
     "@testing-library/user-event": "14.6.1",
@@ -82,11 +81,7 @@
     "test:watch": "bun test --watch",
     "types": "tsc -p tsconfig.json --noEmit",
     "update": "syncpack update",
-    "yeet": "bunx rimraf bun.lockb && bunx rimraf **/{dist,node_modules,.turbo,.next,.vercel,.netlify}/ --glob && bunx rimraf **/tsconfig.tsbuildinfo --glob",
-    "build:worker": "opennextjs-cloudflare",
-    "dev:worker": "wrangler dev --port 8771",
-    "preview:worker": "npm run build:worker && npm run dev:worker",
-    "deploy:worker": "npm run build:worker && wrangler deploy"
+    "yeet": "bunx rimraf bun.lockb && bunx rimraf **/{dist,node_modules,.turbo,.next,.vercel,.netlify}/ --glob && bunx rimraf **/tsconfig.tsbuildinfo --glob"
   },
   "type": "module"
 }
