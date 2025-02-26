@@ -26,6 +26,7 @@ import CircleCommandLine from 'src/components/pdf/icons/circle-command-line';
 import CircleGraduationCap from 'src/components/pdf/icons/circle-graduation-cap';
 import CircleIdCard from 'src/components/pdf/icons/circle-id-card';
 import CircleUser from 'src/components/pdf/icons/circle-user';
+import LinkIcon from 'src/components/pdf/icons/link';
 import { getAccentColor, getNeutralColor } from 'src/helpers/colors';
 import {
   fullName,
@@ -400,7 +401,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
                   <Text style={styles.bold}>{projects.project}</Text>
                 </View>
                 <View style={styles.itemSubheadingRow}>
-                  <BuildingColumns size={fontSizes.xxs} />
+                  <LinkIcon size={fontSizes.xxs} />
                   <Text style={styles.itemSubheading}>{projects.url}</Text>
                 </View>
                 <Html {...htmlProperties}>{projects.body.html}</Html>
