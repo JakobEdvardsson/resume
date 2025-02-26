@@ -13,6 +13,7 @@ export default function ContactInformation(): ReactNode {
     <article className="border-neutral-6 space-y-4 rounded-xl border py-8 shadow-md md:col-span-2">
       <div className="container space-y-6">
         <SectionHeading
+          className="justify-center"
           Icon={IdentificationIcon}
           level={3}
           text="Contact Information"
