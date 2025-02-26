@@ -2,7 +2,6 @@ import { resumeConfig } from '@config/resume-config';
 import {
   PrivateField,
   ProfessionalExperience,
-  additionalInfo,
   allSkills,
   personal,
 } from '@content';
@@ -26,7 +25,6 @@ import CircleCheck from 'src/components/pdf/icons/circle-check';
 import CircleCommandLine from 'src/components/pdf/icons/circle-command-line';
 import CircleGraduationCap from 'src/components/pdf/icons/circle-graduation-cap';
 import CircleIdCard from 'src/components/pdf/icons/circle-id-card';
-import CirclePaintbrush from 'src/components/pdf/icons/circle-paintbrush';
 import CircleUser from 'src/components/pdf/icons/circle-user';
 import { getAccentColor, getNeutralColor } from 'src/helpers/colors';
 import {
