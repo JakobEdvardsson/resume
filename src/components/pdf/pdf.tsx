@@ -32,6 +32,7 @@ import {
   fullName,
   sortedAchievements,
   sortedProfessionalExperiences,
+  sortedProjects,
 } from 'src/helpers/utils';
 
 const theme = resumeConfig.pdfTheme;
@@ -378,23 +379,22 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             }}
           />
 
+          {/* Projects */}
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
-              <CircleGraduationCap size={fontSizes.m} />
-              <Text>Education</Text>
+              <CircleCommandLine size={fontSizes.m} />
+              <Text>Projects</Text>
             </View>
-            {sortedAchievements.map((achievement) => (
-              <View key={achievement._id}>
+            {sortedProjects.map((projects) => (
+              <View key={projects._id}>
                 <View style={styles.itemHeading}>
-                  <Text style={styles.bold}>{achievement.achievement}</Text>
+                  <Text style={styles.bold}>{projects.project}</Text>
                 </View>
                 <View style={styles.itemSubheadingRow}>
                   <BuildingColumns size={fontSizes.xxs} />
-                  <Text style={styles.itemSubheading}>
-                    {achievement.organization}
-                  </Text>
+                  <Text style={styles.itemSubheading}>{projects.url}</Text>
                 </View>
-                <Html {...htmlProperties}>{achievement.body.html}</Html>
+                <Html {...htmlProperties}>{projects.body.html}</Html>
               </View>
             ))}
           </View>
@@ -406,11 +406,11 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
               marginVertical: 8,
             }}
           />
-
+          {/* Education */}
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
-              <CircleCommandLine size={fontSizes.m} />
-              <Text>Projects</Text>
+              <CircleGraduationCap size={fontSizes.m} />
+              <Text>Education</Text>
             </View>
             {sortedAchievements.map((achievement) => (
               <View key={achievement._id}>
