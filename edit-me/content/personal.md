@@ -4,7 +4,7 @@ familyName: Edvardsson
 title: Computer Science Student
 location: Malmö, Sweden
 email: jakob@edvardsson.tech
-domain: https://Edvardsson.tech
+domain: Edvardsson.tech
 ---
 
 I'm a Computer Science student at Malmö University with a passion for software development.
