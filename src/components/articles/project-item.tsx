@@ -20,7 +20,7 @@ export default function ProjectItem({
 
         <div className="text-neutral-11 flex items-center gap-2 text-lg font-semibold tracking-wide">
           <LinkIcon className="h-4" />
-          <a href={url}> {url}</a>
+          <a href={url}> {project}</a>
         </div>
       </div>
     </article>
