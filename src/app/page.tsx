@@ -19,7 +19,7 @@ export default function Page(): ReactNode {
       <Professional />
       <Projects />
       <Achievements />
-      <AdditionalInfo />
+      {/* <AdditionalInfo /> */}
     </div>
   );
 }
