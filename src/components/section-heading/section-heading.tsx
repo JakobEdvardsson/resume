@@ -24,7 +24,7 @@ export default function SectionHeading({
     <Heading className={cn('flex items-center gap-3', className)} level={level}>
       {Icon && (
         <div className="bg-neutral-12 hidden h-[1em] w-[1em] items-center justify-center rounded-full md:flex">
-          <Icon aria-hidden className="text-neutral-1 h-[0.6em]" />
+          <Icon aria-hidden className="text-neutral-1 h-[0.6em] w-100" />
         </div>
       )}
       <span>{text}</span>

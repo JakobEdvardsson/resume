@@ -40,6 +40,16 @@ export const Personal = defineDocumentType(() => ({
       description: 'Domain to personal website',
       required: true,
     },
+    github: {
+      type: 'string',
+      description: 'Url to github page',
+      required: true,
+    },
+    linkedin: {
+      type: 'string',
+      description: 'Url to linkedin',
+      required: true,
+    },
   },
 }));
 
