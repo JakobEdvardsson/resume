@@ -245,8 +245,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const PictureOfMe = `public/images/picture-of-me.jpg`;
-
 const htmlProperties: Omit<HtmlProps, 'children'> = {
   style: { fontSize: fontSizes.xxs },
   stylesheet: {
@@ -296,7 +294,10 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
         <View style={styles.sidebar}>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>{fullName}</Text>
-            <Image src={PictureOfMe} style={styles.image} />
+            <Image
+              src={'https://www.edvardsson.tech/images/picture-of-me.jpg'}
+              style={styles.image}
+            />
             <Text style={styles.headerSubtitle}>{personal.title}</Text>
           </View>
           <View style={styles.sidebarContent}>
