@@ -2,7 +2,6 @@ import { resumeConfig } from '@config/resume-config';
 import {
   PrivateField,
   ProfessionalExperience,
-  additionalInfo,
   allSkills,
   personal,
 } from '@content';
@@ -14,6 +13,7 @@ import {
   Text,
   View,
   Link,
+  Image,
 } from '@react-pdf/renderer';
 import path from 'node:path';
 import { HtmlProps } from 'node_modules/react-pdf-html/dist/types/Html';
@@ -22,15 +22,16 @@ import Html from 'react-pdf-html';
 import BuildingColumns from 'src/components/pdf/icons/building-columns';
 import CircleBriefcase from 'src/components/pdf/icons/circle-briefcase';
 import CircleCheck from 'src/components/pdf/icons/circle-check';
+import CircleCommandLine from 'src/components/pdf/icons/circle-command-line';
 import CircleGraduationCap from 'src/components/pdf/icons/circle-graduation-cap';
 import CircleIdCard from 'src/components/pdf/icons/circle-id-card';
-import CirclePaintbrush from 'src/components/pdf/icons/circle-paintbrush';
 import CircleUser from 'src/components/pdf/icons/circle-user';
 import { getAccentColor, getNeutralColor } from 'src/helpers/colors';
 import {
   fullName,
   sortedAchievements,
   sortedProfessionalExperiences,
+  sortedProjects,
 } from 'src/helpers/utils';
 
 const theme = resumeConfig.pdfTheme;
@@ -236,7 +237,15 @@ const styles = StyleSheet.create({
     fontWeight: 500,
     paddingHorizontal: spacers[2],
   },
+  image: {
+    borderRadius: '0.375rem',
+    width: '150px',
+    height: '150px',
+    alignSelf: 'center',
+  },
 });
+
+const PictureOfMe = `public/images/picture-of-me.jpg`;
 
 const htmlProperties: Omit<HtmlProps, 'children'> = {
   style: { fontSize: fontSizes.xxs },
@@ -287,6 +296,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
         <View style={styles.sidebar}>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>{fullName}</Text>
+            <Image src={PictureOfMe} style={styles.image} />
             <Text style={styles.headerSubtitle}>{personal.title}</Text>
           </View>
           <View style={styles.sidebarContent}>
@@ -377,6 +387,34 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             }}
           />
 
+          {/* Projects */}
+          <View style={styles.section}>
+            <View style={styles.sectionHeading}>
+              <CircleCommandLine size={fontSizes.m} />
+              <Text>Projects</Text>
+            </View>
+            {sortedProjects.map((projects) => (
+              <View key={projects._id}>
+                <View style={styles.itemHeading}>
+                  <Text style={styles.bold}>{projects.project}</Text>
+                </View>
+                <View style={styles.itemSubheadingRow}>
+                  <BuildingColumns size={fontSizes.xxs} />
+                  <Text style={styles.itemSubheading}>{projects.url}</Text>
+                </View>
+                <Html {...htmlProperties}>{projects.body.html}</Html>
+              </View>
+            ))}
+          </View>
+
+          <View
+            style={{
+              borderBottomWidth: 1,
+              borderBottomColor: '#999',
+              marginVertical: 8,
+            }}
+          />
+          {/* Education */}
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
               <CircleGraduationCap size={fontSizes.m} />
@@ -398,14 +436,13 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             ))}
           </View>
 
-          <View
+          {/* <View
             style={{
               borderBottomWidth: 1,
               borderBottomColor: '#999',
               marginVertical: 8,
             }}
           />
-
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
               <CirclePaintbrush size={fontSizes.m} />
@@ -421,7 +458,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             >
               {additionalInfo.body.html}
             </Html>
-          </View>
+          </View> */}
         </View>
       </Page>
     </Document>

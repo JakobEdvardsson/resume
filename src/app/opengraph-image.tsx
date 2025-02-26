@@ -57,7 +57,7 @@ export default async function og(): Promise<ImageResponse> {
           style={{ color: getAccentColor(12, theme) }}
           tw="rounded-lg text-4xl"
         >
-          Professional résumé available online or as a PDF
+          Professional resume available online or as a PDF
         </div>
       </div>
     ),
