@@ -10,7 +10,7 @@ import Skills from 'src/components/articles/skills';
 export default function Page(): ReactNode {
   return (
     <div className="container space-y-12">
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
         <AboutMe />
         <ContactInformation />
         <Skills />

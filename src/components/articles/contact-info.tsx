@@ -11,7 +11,7 @@ export default function ContactInformation({
   privateInformation,
 }: ContactInformationProperties): ReactNode {
   return (
-    <article className="space-y-4">
+    <article className="space-y-4 md:col-span-2">
       <SectionHeading
         Icon={IdentificationIcon}
         level={3}

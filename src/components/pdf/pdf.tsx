@@ -14,6 +14,7 @@ import {
   Text,
   View,
   Link,
+  Image,
 } from '@react-pdf/renderer';
 import path from 'node:path';
 import { HtmlProps } from 'node_modules/react-pdf-html/dist/types/Html';
@@ -238,7 +239,15 @@ const styles = StyleSheet.create({
     fontWeight: 500,
     paddingHorizontal: spacers[2],
   },
+  image: {
+    borderRadius: '0.375rem',
+    width: '150px',
+    height: '150px',
+    alignSelf: 'center',
+  },
 });
+
+const PictureOfMe = `public/images/picture-of-me.jpg`;
 
 const htmlProperties: Omit<HtmlProps, 'children'> = {
   style: { fontSize: fontSizes.xxs },
@@ -289,6 +298,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
         <View style={styles.sidebar}>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>{fullName}</Text>
+            <Image src={PictureOfMe} style={styles.image} />
             <Text style={styles.headerSubtitle}>{personal.title}</Text>
           </View>
           <View style={styles.sidebarContent}>
@@ -428,14 +438,13 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             ))}
           </View>
 
-          <View
+          {/* <View
             style={{
               borderBottomWidth: 1,
               borderBottomColor: '#999',
               marginVertical: 8,
             }}
           />
-
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
               <CirclePaintbrush size={fontSizes.m} />
@@ -451,7 +460,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             >
               {additionalInfo.body.html}
             </Html>
-          </View>
+          </View> */}
         </View>
       </Page>
     </Document>
