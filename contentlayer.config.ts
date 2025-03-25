@@ -141,12 +141,14 @@ export const Achievement = defineDocumentType(() => ({
       type: 'string',
       description:
         'The name of the school, organization, or program you earned your achievement from',
-      required: true,
     },
     date: {
       type: 'string',
       description: 'The date you earned your achievement',
-      required: true,
+    },
+    course: {
+      type: 'boolean',
+      description: "If it's a course or not",
     },
   },
 }));

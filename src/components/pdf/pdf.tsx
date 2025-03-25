@@ -422,7 +422,8 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
               <CircleGraduationCap size={fontSizes.m} />
               <Text>Education</Text>
             </View>
-            {sortedAchievements.map((achievement) => (
+            {sortedAchievements.map((achievement) => 
+              !achievement.course && (
               <View key={achievement._id}>
                 <View style={styles.itemHeading}>
                   <Text style={styles.bold}>{achievement.achievement}</Text>
@@ -437,6 +438,31 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
               </View>
             ))}
           </View>
+
+          {/* Courses */}
+          <View style={styles.section}>
+            <View style={[styles.sectionHeading, { marginBottom: 4 }]}>
+              <CircleGraduationCap size={fontSizes.m} />
+              <Text>Courses</Text>
+            </View>
+            {sortedAchievements.map((achievement) => 
+              achievement.course == true && (
+
+              <View key={achievement._id} style={[styles.flexRow, { marginVertical: 3 }]}>
+                <Text style={styles.bold}>{achievement.achievement}: </Text>
+                <Text>
+                  &nbsp;{achievement.organization}
+                </Text>
+              </View>
+
+              // <View key={achievement._id}>
+              //   <View style={styles.itemHeading}>
+              //     <Text >{achievement.achievement}</Text>
+              //   </View>
+              // </View>
+            ))}
+          </View>
+
 
           {/* <View
             style={{

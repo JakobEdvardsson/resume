@@ -9,12 +9,13 @@ export default function AchievementItem({
   body,
   organization,
   date,
+  course
 }: Achievement): ReactNode {
   return (
     <article className="space-y-4">
       <div className="space-y-1">
         <Heading className="text-balance" level={3}>
-          {achievement}
+          {achievement} {course && "Course"}
         </Heading>
 
         <div className="text-neutral-11 flex items-center gap-2 text-lg font-semibold tracking-wide">
