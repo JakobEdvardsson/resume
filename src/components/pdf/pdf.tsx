@@ -33,7 +33,7 @@ import {
   sortedAchievements,
   sortedProfessionalExperiences,
   sortedProjects,
-} from 'src/helpers/utils';
+} from 'src/helpers/utilities';
 
 const theme = resumeConfig.pdfTheme;
 
@@ -385,7 +385,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
             style={{
               borderBottomWidth: 1,
               borderBottomColor: '#999',
-              marginVertical: 8,
+              marginVertical: 4,
             }}
           />
 

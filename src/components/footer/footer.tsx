@@ -2,7 +2,7 @@ import { links } from '@config/links';
 import { personal } from '@content';
 import { ReactNode } from 'react';
 import { Button } from 'src/components/button/button';
-import { fullName } from 'src/helpers/utils';
+import { fullName } from 'src/helpers/utilities';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer(): ReactNode {

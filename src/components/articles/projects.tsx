@@ -2,7 +2,7 @@ import { CommandLineIcon } from '@heroicons/react/24/solid';
 import { Fragment, ReactNode } from 'react';
 import Separator from 'src/components/articles/separator';
 import SectionHeading from 'src/components/section-heading/section-heading';
-import { sortedProjects } from 'src/helpers/utils';
+import { sortedProjects } from 'src/helpers/utilities';
 import ProjectItem from './project-item';
 
 export default function Projects(): ReactNode {

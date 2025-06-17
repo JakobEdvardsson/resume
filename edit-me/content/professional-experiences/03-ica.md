@@ -1,7 +1,7 @@
 ---
 organization: ICA
 titles:
-  - title: Software Developer Intern
+  - title: Retail & Postal Services Associate
     startDate: 'Mar. 2020'
     endDate: 'Dec. 2023'
 ---
